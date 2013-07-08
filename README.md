@@ -13,3 +13,5 @@ Added features:
  
 Merged with fixes from https://github.com/ST-Software/Scripts/tree/master/datepicker
 - prevent NaN NaN NaN bug when encountered Invalid Date
+
+Examples could be found here: http://eliotik.github.io/DatePicker/
