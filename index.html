@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Datepicker</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="css/jquery.datepicker.css" rel="stylesheet" type="text/css">
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Date Picker - jQuery plugin</h1>
+        <div class="tabsContent">
+            <div class="tab" style="display: block;">
+                <h3>Examples</h3>
+                <p id="date"></p>
+
+                <p>Flat mode, multiple selection, disabled dates, special day, the week start sunday.</p>
+                <p id="date2"></p>
+
+                <p><a id="clearSelection" href="#">Clear selection</a></p>
+                <pre>$('#date2').DatePickerClear();</pre>
+
+                <p>Modal mode, minimum selected 1, maximum selected 10, format: d-m-Y</p>
+                <div id="date4" class="datepicker-icon" data-dates="['08.07.2013']"></div>
+
+                <p>Flat mode, range selection, 3 calendars.</p>
+                <p id="date3"></p>
+
+                <p>Attached to an text field and usign callbacks to update the date selection with the value from the field.</p>
+                <p>
+                    <input value="06/14/2008" id="inputDate" class="inputDate">
+                    <label id="closeOnSelect"><input type="checkbox"> Close on selection</label>
+                </p>
+
+                <p>Flat mode, inside a custom widget and with custom design.</p>
+                <div id="widget">
+                    <div id="widgetField">
+                        <span>28 July, 2008 ÷ 31 July, 2008</span>
+                        <a href="#">Select date range</a>
+                    </div>
+                    <div id="widgetCalendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery.datepicker.js"></script>
+    <script src="js/demo.js"></script>
+
+</body>
+</html>
