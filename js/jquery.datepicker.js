@@ -610,34 +610,42 @@
                                 switch (options.mode) {
                                     case 'multiple':
                                         val = (tmp.setHours(0, 0, 0, 0)).valueOf();
-                                        if ($.inArray(val, options.date) > -1) {
-                                            if (options.minAmountSelected !== false) {
-                                                if ((options.date.length - 1) >= options.minAmountSelected) {
+
+                                        if (ev.ctrlKey == true) {
+                                            if ($.inArray(val, options.date) > -1) {
+                                                if (options.minAmountSelected !== false) {
+                                                    if ((options.date.length - 1) >= options.minAmountSelected) {
+                                                        $.each(options.date, function (nr, dat) {
+                                                            if (dat === val) {
+                                                                removedDate = val;
+                                                                options.date.splice(nr, 1);
+                                                                return false;
+                                                            }
+                                                            return true;
+                                                        });
+                                                    } else return false;
+                                                } else {
                                                     $.each(options.date, function (nr, dat) {
                                                         if (dat === val) {
                                                             removedDate = val;
                                                             options.date.splice(nr, 1);
                                                             return false;
                                                         }
+                                                        return true;
                                                     });
-                                                } else return false;
+                                                }
                                             } else {
-                                                $.each(options.date, function (nr, dat) {
-                                                    if (dat === val) {
-                                                        removedDate = val;
-                                                        options.date.splice(nr, 1);
-                                                        return false;
-                                                    }
-                                                });
+                                                if (options.maxAmountSelected !== false) {
+                                                    if ((options.date.length + 1) <= options.maxAmountSelected) {
+                                                        options.date.push(val);
+                                                    } else return false;
+                                                } else {
+                                                    options.date.push(val);
+                                                }
                                             }
                                         } else {
-                                            if (options.maxAmountSelected !== false) {
-                                                if ((options.date.length + 1) <= options.maxAmountSelected) {
-                                                    options.date.push(val);
-                                                } else return false;
-                                            } else {
-                                                options.date.push(val);
-                                            }
+                                            options.date = new Array();
+                                            options.date.push(val);
                                         }
                                         break;
                                     case 'range':
