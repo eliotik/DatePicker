@@ -145,6 +145,7 @@
                 maxAmountSelected: false,//work with mode: multiselect
                 modal: false,//add overlay.modal to block background content
                 showCloseBtn: false,//show close btn, usefull with modal view
+                closeOnRangeSelected: false,
                 //ap fix end
                 onRender: function () {
                     return {};
@@ -658,6 +659,9 @@
                                             options.date[0] = val - 86399000;
                                         } else {
                                             options.date[1] = val;
+                                        }
+                                        if (options.lastSel && options.closeOnRangeSelected) {
+                                            $(options.el).DatePickerHide();
                                         }
                                         options.lastSel = !options.lastSel;
                                         break;
